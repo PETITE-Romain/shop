@@ -6,8 +6,7 @@ Fruits et Légumes et un site e-commerce qui permet de faire des commandes pour 
 ## Fonctionnalités
 - Création et connexion a un compte
 - Passer une commande avec certain produits
-- Gestion des données clients
-- Rapports et analyses
+- Accéder à l'historique de ses commandes
 
 ## Installation
 1. Clonez le dépôt :
