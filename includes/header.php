@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -21,7 +23,7 @@ session_start();
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="boutique.php">Boutique</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="apropos.php">À propos</a></li>
+        <li class="nav-item"><a class="nav-link" href="panier.php">Panier</a></li>
         <?php if (isset($_SESSION['user'])): ?>
           <li class="nav-item"><a class="nav-link" href="deconnexion.php">Déconnexion</a></li>
         <?php else: ?>

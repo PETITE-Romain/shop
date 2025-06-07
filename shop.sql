@@ -86,7 +86,8 @@ CREATE TABLE `produit` (
   `description` text DEFAULT NULL,
   `image` text DEFAULT NULL,
   `quantite` int(11) DEFAULT 0,
-  `id_categorie` int(11) NOT NULL
+  `id_categorie` int(11) NOT NULL,
+  'prix' decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -100,7 +101,9 @@ CREATE TABLE `utilisateur` (
   `nom` varchar(250) DEFAULT NULL,
   `prenom` varchar(250) DEFAULT NULL,
   `email` varchar(250) DEFAULT NULL,
-  `mot_de_passe` varchar(250) DEFAULT NULL
+  `mot_de_passe` varchar(250) DEFAULT NULL,
+  'adresse' VARCHAR(255) DEFAULT NULL,
+  'is_admin' BOOLEAN NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -108,7 +111,7 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id`, `nom`, `prenom`, `email`, `mot_de_passe`) VALUES
-(2, 'PETITE', 'Romain', 'romain.petite@outlook.fr', '$2y$10$1D4DePfy1/70eBmxRn81FekGDYD.ecdNOAdV9niKHl30N1GXDL92a');
+(2, 'PETITE', 'Romain', 'romain.petite@outlook.fr', '$2y$10$1D4DePfy1/70eBmxRn81FekGDYD.ecdNOAdV9niKHl30N1GXDL92a', '3 chemin des vignes, 13090 Aix-en-Provence', 1);
 
 --
 -- Index pour les tables déchargées
@@ -202,3 +205,8 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- INSERT INTO categorie (id, nom) VALUES
+-- (1, 'Fruits'),
+-- (2, 'Légumes');
